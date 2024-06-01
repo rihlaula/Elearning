@@ -13,7 +13,7 @@
   <section class="section">
     <div class="card">
       <div class="card-body">
-        <a href="#" class="btn btn-primary">+ Student</a>
+        <a href="/admin/student/create" class="btn btn-primary my-3">+ Student</a>
         <table class="table mt-2">
           <tr>
             <th>No</th>
@@ -30,9 +30,13 @@
                 <td>{{ $student->nim }}</td>
                 <td>{{ $student->class }}</td>
                 <td>{{ $student->major }}</td>
-                <td>
-                  <a href="#" class="btn btn-warning">Edit</a>
-                  <a href="#" class="btn btn-danger">Hapus</a>
+                <td class="d-flex">
+                  <a href="/admin/student/edit/{{ $student->id }}" class="btn btn-warning me-2">Edit</a>
+                  <form action="/admin/student/delete/ {{ $student->id }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah anda yakin?')">Hapus</button>   
+                  </form>       
                 </td>
               </tr>
           @endforeach
