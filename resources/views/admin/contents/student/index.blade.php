@@ -25,7 +25,7 @@
           </tr>
           @foreach ($students as $student)
               <tr>
-                <td>1</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->nim }}</td>
                 <td>{{ $student->class }}</td>
