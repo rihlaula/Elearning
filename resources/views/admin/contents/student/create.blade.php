@@ -1,11 +1,11 @@
 @extends('admin.main')
 @section('content')
 <div class="pagetitle">
-    <h1>Student</h1>
+    <h1>Tambah Student</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"></li>
-        <li class="breadcrumb-item active">+ Student</li>
+        <li class="breadcrumb-item active">Student</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -34,6 +34,17 @@
                     <option value="Bisnis Digital">Bisnis Digital</option>
                 </select>
             </div>
+
+            <div class="mb-2">
+              <label for="courses_id" class="form-label">Course</label>
+              <select name="courses_id" id="courses_id" class="form-select">
+                  <option value="">Choose a courses</option>
+
+                  @foreach ($courses as $course)
+                      <option value="{{ $course->id }}">{{ $course->name }}</option>
+                  @endforeach
+              </select>
+          </div>
 
             <div class="mb-2">
                 <label for="class" class="form-label">Class</label>

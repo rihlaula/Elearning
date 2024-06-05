@@ -1,11 +1,11 @@
 @extends('admin.main')
 @section('content')
     <div class="pagetitle">
-        <h1>Courses</h1>
+        <h1>Tambah Course</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"></li>
-                <li class="breadcrumb-item active">+ Courses</li>
+                <li class="breadcrumb-item active">Course</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
