@@ -64,8 +64,12 @@ class StudentController extends Controller
         //cari data student berdasarkan id
         $student = Student::find($id);// Select * FROM students WHERE id = $id;
 
+        //mendapatkan data courses
+        $courses = Courses::all();
+
         return view('admin.contents.student.edit', [
-            'student'=> $student
+            'student'=> $student,
+            'courses'=> $courses
         ]);
     }
 
