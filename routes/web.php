@@ -35,13 +35,11 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-
-
 //route menampilkan halaman student
-Route::get('/admin/student', [StudentController::class, 'index']);
+Route::get('/admin/student', [StudentController::class, 'index'])->middleware('admin') ;
 
 //route menampilkan halaman tambahan student
-Route::get('/admin/student/create', [StudentController::class, 'create']);
+Route::get('/admin/student/create', [StudentController::class, 'create'])->middleware('admin');
 
 //Route untuk mengirim data student baru
 Route::post('admin/student/store', [StudentController::class, 'store']);
@@ -62,7 +60,7 @@ Route::delete('admin/student/delete/{id}', [StudentController::class, 'destroy']
 Route::get('admin/courses', [CoursesController::class, 'index']);
 
 //route menampilkan halaman tambahan courses
-Route::get('admin/courses/create', [CoursesController::class, 'create']);
+Route::get('admin/courses/create', [CoursesController::class, 'create'])->middleware('admin');
 
 //Route untuk mengirim data courses baru
 Route::post('admin/courses/store', [CoursesController::class, 'store']);
